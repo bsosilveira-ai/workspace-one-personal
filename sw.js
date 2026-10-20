@@ -1,1 +1,26 @@
-const CACHE='one-personal-premium-v3-7';const ASSETS=['./','./index.html','./app.js','./icon.svg','./manifest.webmanifest'];self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)));self.skipWaiting()});self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==location.origin)return;e.respondWith(fetch(e.request).then(r=>{if(r.ok){const copy=r.clone();caches.open(CACHE).then(c=>c.put(e.request,copy))}return r}).catch(()=>caches.match(e.request).then(r=>r||caches.match('./index.html'))))});
+
+const CACHE = 'wop-shell-a8d52f988dd79325';
+const BASE = "/workspace-one-personal/";
+const FILES = [BASE,"/workspace-one-personal/assets/index-BawOK0kq.css","/workspace-one-personal/assets/index-DhG61RRy.js","/workspace-one-personal/manifest.webmanifest","/workspace-one-personal/icon.svg","/workspace-one-personal/favicon.svg","/workspace-one-personal/favicon.ico","/workspace-one-personal/apple-touch-icon.png","/workspace-one-personal/icon-192.png","/workspace-one-personal/icon-512.png","/workspace-one-personal/icons/personal-star-16.png","/workspace-one-personal/icons/personal-star-32.png","/workspace-one-personal/icons/personal-star-192.png","/workspace-one-personal/icons/personal-star-512.png","/workspace-one-personal/icons/personal-star-apple-152.png","/workspace-one-personal/icons/personal-star-apple-167.png","/workspace-one-personal/icons/personal-star-apple-180.png","/workspace-one-personal/icons/personal-star-maskable-512.png"];
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)));
+});
+self.addEventListener('activate', event => {
+  event.waitUntil(caches.keys().then(keys => Promise.all(
+    keys.filter(key => key.startsWith('wop-shell-') && key !== CACHE).map(key => caches.delete(key))
+  )).then(() => self.clients.claim()));
+});
+self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+  if (event.request.method !== 'GET' || url.origin !== self.location.origin ||
+      !url.pathname.startsWith(BASE) || url.pathname.startsWith(BASE + 'api/') ||
+      url.pathname.startsWith('/__')) return;
+  if (event.request.mode === 'navigate') {
+    event.respondWith(fetch(event.request).catch(async () => {
+      const shell = await caches.match(BASE);
+      return shell || new Response('Abra o aplicativo com internet uma vez para ativar o modo offline.', {status: 503});
+    }));
+  } else if (FILES.includes(url.pathname)) {
+    event.respondWith(caches.match(event.request).then(cached => cached || fetch(event.request)));
+  }
+});
