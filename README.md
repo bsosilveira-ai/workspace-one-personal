@@ -56,3 +56,10 @@ Execute um servidor HTTP estático (por exemplo, `python -m http.server 8000`) n
 - Próximos compromissos exibe os cinco eventos futuros mais próximos, mesmo de outros meses.
 - Ver todos abre uma lista completa de registros futuros.
 - Atualizado cache do service worker para carregar a nova versão.
+
+
+## Versão 2.6
+- Indicadores da Home clicáveis e filtrados (hoje, semana, eventos).
+- Tela dedicada a cada lista de compras, com adição rápida, checklist e finalização com data.
+- Ajustes de interação e toque no iPhone.
+- Dados locais e chave de armazenamento preservados.
