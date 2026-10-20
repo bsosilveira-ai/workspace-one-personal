@@ -63,3 +63,10 @@ Execute um servidor HTTP estático (por exemplo, `python -m http.server 8000`) n
 - Tela dedicada a cada lista de compras, com adição rápida, checklist e finalização com data.
 - Ajustes de interação e toque no iPhone.
 - Dados locais e chave de armazenamento preservados.
+
+
+## Versão 2.7
+- Mercado com quantidade, unidade, preço opcional e edição individual de produtos.
+- Botões da Home com camada de toque prioritária, evitando interferência da decoração.
+- Mantida a chave localStorage anterior para preservar dados.
+- Atenção: backup antes de publicar; testes finais no Safari/iPhone necessários.
