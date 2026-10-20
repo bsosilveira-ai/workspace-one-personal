@@ -1,0 +1,20 @@
+ONE PERSONAL — VERSÃO PARA GITHUB PAGES
+
+Este ZIP contém APENAS o site compilado para publicar no GitHub Pages.
+NÃO envie o ZIP do Replit original ao repositório: ele inclui código de servidor e outros arquivos desnecessários.
+
+PASSOS
+1. NÃO apague a versão antiga antes de guardar um backup do repositório e dos dados no app.
+2. Recomenda-se testar esta versão em um repositório NOVO, público, chamado workspace-one-personal-teste.
+3. IMPORTANTE: este pacote está configurado para o endereço /workspace-one-personal/. Para um repositório de teste com outro nome, as rotas precisarão ser adaptadas antes de publicar.
+4. Depois de validado, envie o CONTEÚDO deste ZIP (não a pasta exterior) à raiz do repositório workspace-one-personal.
+5. Mantenha GitHub Pages em main / (root).
+6. Abra https://bsosilveira-ai.github.io/workspace-one-personal/ no Safari.
+7. Teste Agenda, Mercado, Finanças, conclusão, persistência, backup e ícone antes de depender do app.
+
+ATENÇÃO
+- One Voice depende de servidor externo e NÃO funciona no GitHub Pages.
+- O restante do app ainda requer testes reais no iPhone.
+- Os dados são armazenados por aparelho/navegador, não sincronizam entre usuários.
+- Dados do endereço antigo NÃO são transferidos automaticamente. Faça backup antes de trocar.
+- O repositório público publica os arquivos do app, mas não os dados locais de cada aparelho.
