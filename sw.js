@@ -1,7 +1,7 @@
 
-const CACHE = 'wop-shell-a8d52f988dd79325';
+const CACHE = 'wop-shell-e00a0d7efd4b5e36';
 const BASE = "/workspace-one-personal/";
-const FILES = [BASE,"/workspace-one-personal/assets/index-BawOK0kq.css","/workspace-one-personal/assets/index-DhG61RRy.js","/workspace-one-personal/manifest.webmanifest","/workspace-one-personal/icon.svg","/workspace-one-personal/favicon.svg","/workspace-one-personal/favicon.ico","/workspace-one-personal/apple-touch-icon.png","/workspace-one-personal/icon-192.png","/workspace-one-personal/icon-512.png","/workspace-one-personal/icons/personal-star-16.png","/workspace-one-personal/icons/personal-star-32.png","/workspace-one-personal/icons/personal-star-192.png","/workspace-one-personal/icons/personal-star-512.png","/workspace-one-personal/icons/personal-star-apple-152.png","/workspace-one-personal/icons/personal-star-apple-167.png","/workspace-one-personal/icons/personal-star-apple-180.png","/workspace-one-personal/icons/personal-star-maskable-512.png"];
+const FILES = ["/workspace-one-personal/","/workspace-one-personal/assets/index-BawOK0kq.css","/workspace-one-personal/assets/index-zKYmnow4.js","/workspace-one-personal/manifest.webmanifest","/workspace-one-personal/icon.svg","/workspace-one-personal/favicon.svg","/workspace-one-personal/favicon.ico","/workspace-one-personal/apple-touch-icon.png","/workspace-one-personal/icon-192.png","/workspace-one-personal/icon-512.png","/workspace-one-personal/icons/personal-star-16.png","/workspace-one-personal/icons/personal-star-32.png","/workspace-one-personal/icons/personal-star-192.png","/workspace-one-personal/icons/personal-star-512.png","/workspace-one-personal/icons/personal-star-apple-152.png","/workspace-one-personal/icons/personal-star-apple-167.png","/workspace-one-personal/icons/personal-star-apple-180.png","/workspace-one-personal/icons/personal-star-maskable-512.png"];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)));
 });
@@ -13,7 +13,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   const url = new URL(event.request.url);
   if (event.request.method !== 'GET' || url.origin !== self.location.origin ||
-      !url.pathname.startsWith(BASE) || url.pathname.startsWith(BASE + 'api/') ||
+      !url.pathname.startsWith(BASE) || url.pathname.startsWith('/api/') ||
       url.pathname.startsWith('/__')) return;
   if (event.request.mode === 'navigate') {
     event.respondWith(fetch(event.request).catch(async () => {
