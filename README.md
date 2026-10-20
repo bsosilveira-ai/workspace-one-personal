@@ -25,3 +25,17 @@ Aplicativo pessoal mobile-first, separado do Workspace One Corporativo. Sem logi
 ## Testar localmente
 
 Execute um servidor HTTP estático (por exemplo, `python -m http.server 8000`) na pasta e abra `http://localhost:8000`. O modo offline exige a primeira visita com rede e service worker ativo.
+
+## Ajustes 2.1
+- Saudação na tela inicial com o nome salvo em Personalização.
+- Campos com fonte mínima de 16px no iPhone para evitar zoom automático do Safari.
+- Cache offline atualizado.
+
+
+## Atualização 2.3
+- Listas de compras: marcar itens não finaliza automaticamente a lista.
+- Botão Finalizar abre confirmação da data real da compra (editável, padrão hoje).
+- Histórico mantém lista, itens marcados e data de conclusão.
+- Demais registros também pedem data de conclusão.
+- Registros recorrentes preservam ocorrências futuras ao concluir.
+- A data planejada é independente da data de conclusão.
