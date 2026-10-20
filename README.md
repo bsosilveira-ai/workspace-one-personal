@@ -39,3 +39,20 @@ Execute um servidor HTTP estático (por exemplo, `python -m http.server 8000`) n
 - Demais registros também pedem data de conclusão.
 - Registros recorrentes preservam ocorrências futuras ao concluir.
 - A data planejada é independente da data de conclusão.
+
+
+## Versão 2.4 — Refinamento visual
+- Visual premium refinado: hierarquia, cartões, espaços, cores, botões e módulos.
+- Formulários com foco mais claro, campos maiores e acessíveis no iPhone.
+- Removido foco automático ao abrir novo registro para evitar abertura inesperada do teclado.
+- Textos da página inicial simplificados.
+- Mesma chave de armazenamento da versão anterior: não apaga intencionalmente os registros.
+- A versão 2.4 é um refinamento de interface, não uma implementação de notificações push ou de sincronização.
+
+
+## Versão 2.5 — Home com futuro completo
+- Meu dia mostra registros de hoje.
+- Próximos 7 dias mostra registros com prazo dentro da próxima semana.
+- Próximos compromissos exibe os cinco eventos futuros mais próximos, mesmo de outros meses.
+- Ver todos abre uma lista completa de registros futuros.
+- Atualizado cache do service worker para carregar a nova versão.
